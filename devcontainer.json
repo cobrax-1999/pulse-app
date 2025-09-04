@@ -1,0 +1,25 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+    "features": {
+        "ghcr.io/devcontainers/features/desktop-lite:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dart-code.flutter",
+                "ms-vscode.cpptools",
+                "usernamehw.errorlens",
+                "ms-vscode.vscode-serial-monitor"
+            ]
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/setup.sh",
+    "forwardPorts": [6080, 5901],
+    "portsAttributes": {
+        "6080": {
+            "label": "Desktop Lite",
+            "onAutoForward": "notify"
+        }
+    }
+}
